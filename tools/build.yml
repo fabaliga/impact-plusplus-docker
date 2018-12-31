@@ -1,0 +1,8 @@
+version: '3'
+services:
+    impact-build:
+        image: php:7.2.1-apache
+        volumes:
+            - ..:/tmp
+        working_dir: /tmp/tools
+        command: /bin/bash -c "./build.sh"

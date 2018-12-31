@@ -1,0 +1,8 @@
+version: '3'
+services:
+    impact-dev:
+        image: php:7.2.1-apache
+        ports:
+            - 8000:80
+        volumes:
+            - ..:/var/www/html

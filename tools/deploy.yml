@@ -1,0 +1,12 @@
+version: '3'
+services:
+    impact-deploy:
+        image: mesosphere/aws-cli
+        volumes:
+            - ..:/tmp
+        working_dir: /tmp
+        environment:
+            - AWS_ACCESS_KEY_ID=
+            - AWS_SECRET_ACCESS_KEY=
+            - AWS_DEFAULT_REGION=
+        command: s3 sync ./dist s3://BUCKET_NAME/ --acl public-read
